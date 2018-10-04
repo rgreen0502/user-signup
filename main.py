@@ -46,71 +46,40 @@ def signup():
 
     if not empty_field(username):
         username_error="Please enter a Username."
-        password = ""
-        verify = ""
-        username = ""
 
     elif not char_length(username):
         username_error="Must be between 3 and 20 characters."
-        password = ""
-        verify = ""
-        username = ""
 
     else:
         if " " in username:
             username_error="No spaces allowed!"
-            password = ""
-            verify = ""
-            username = ""
 
     if not empty_field(password):
         password_error="Please enter a Password."
-        password = ""
-        verify = ""
-        username = ""
 
     elif not char_length(password):
         password_error="Must be between 3 and 20 characters."
-        password = ""
-        verify = ""
-        username = ""
 
     else:
         if " " in password:
             password_error="No spaces allowed!"
-            password = ""
-            verify = ""
-            username = ""
 
     if verify != password:
-        password_error="Passwords must match."
-        username = ""
+        verify_error="Passwords must match."
 
     if empty_field(email):
         if not char_length(email):
             email_error="Must be between 3 and 20 characters."
-            password = ""
-            verify = ""
-            username = ""
 
         elif not at_symbol(email):
             email_error="Must contain one @ symbol."
-            password = ""
-            verify = ""
-            username = ""
 
         elif not email_period(email):
             email_error="Must contain one dot(.)"
-            password = ""
-            verify = ""
-            username = ""
 
         else:
             if " " in email:
                 email_error="No spaces allowed!"
-                password = ""
-                verify = ""
-                username = "" 
 
     if not username_error and not password_error and not verify_error and not email_error:
         username=username
